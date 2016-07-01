@@ -99,13 +99,11 @@ function init() {
     Plotly.newPlot(gd, data, {});
 }
 
-window.randomizePlot = init;
-// Restyle throws exception
-// window.randomizePlot = function() {
-//     var gen = generateData();
-//     var gd = document.querySelector('#graph');
-//     Plotly.restyle(gd, {x: gen.xdata, y: gen.ydata}, 0);
-// }
+window.randomizePlot = function() {
+    var gen = generateData();
+    var gd = document.querySelector('#graph');
+    Plotly.restyle(gd, {x: [gen.xdata], y: [gen.ydata]}, 0);
+}
 
 
 init();
